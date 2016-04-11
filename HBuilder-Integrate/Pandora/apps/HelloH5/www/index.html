@@ -138,31 +138,62 @@ function preateClear(){
         
         <script type="text/javascript">
             
+            //打开播放器
             function pluginShow() {
                 
-                
-                var jsonString = "{\"lineContent\":{\"typeName\":\"1\",\"id\":\"783\",\"detail\":\"踏入这一行\",\"countdown\":\"2015-12-14 00:00:00\",\"adaptObject\":\"链家专属\",\"yhPrice\":\"88\",\"videoUrl\":\"http://admin.ljabc.com.cn/upload/video/PIC_0000000549.png\",\"videoPath\":\"http://admin.ljabc.com.cn/upload/video/file_0000001110.mp4\",\"sjPrice\":\"88\",\"effectiveTime\":\"6个月\",\"videoName\":\"行家\",\"teacher\":\"祁世钊\"},\"dailyLesson\":\"0\",\"chapterList\":[{\"id\":\"799\",\"detail\":\"开篇\",\"name\":\"开篇\",\"path\":\"http://admin.ljabc.com.cn/upload/video/file_0000001110.mp4\"},{\"id\":\"800\",\"detail\":\"行\",\"name\":\"行\",\"path\":\"http://admin.ljabc.com.cn/upload/video/file_0000001111.mp4\"},{\"id\":\"801\",\"detail\":\"客户思维，我对客户好1分，客户对我好10分\",\"name\":\"行-我能干好（一）\",\"path\":\"http://admin.ljabc.com.cn/upload/video/file_0000002342.mp4\"},{\"id\":\"802\",\"detail\":\"销售最重要的是具有百折不挠的精神，你没有拜访8次，你不要回来跟我说，你要放弃了。\",\"name\":\"行-我能干好（二）\",\"path\":\"http://admin.ljabc.com.cn/upload/video/file_0000001113.mp4\"},{\"id\":\"803\",\"detail\":\"任何一个行业，如果你选对了，那就要沉下去，你觉得选的不对要赶紧换。\",\"name\":\"行-我能干长\",\"path\":\"http://admin.ljabc.com.cn/upload/video/file_0000001114.mp4\"},{\"id\":\"804\",\"detail\":\"选行非常重要，选一个毛利率高、市场空间大、人才洼地的行业。\",\"name\":\"行-选择背后的力量\",\"path\":\"http://admin.ljabc.com.cn/upload/video/file_0000001115.mp4\"},{\"id\":\"805\",\"detail\":\"我们跟优秀的房产销售顾问相比，还有很长一段路要走。\",\"name\":\"我眼中的行家-业务层面\",\"path\":\"http://admin.ljabc.com.cn/upload/video/file_0000001116.mp4\"},{\"id\":\"806\",\"detail\":\"链家对这个行业的摸索，如同猪在拱一扇门，怎么都拱不开，拱了很久，突然有一天门打开了。\",\"name\":\"我眼中的行家-管理层面\",\"path\":\"http://admin.ljabc.com.cn/upload/video/file_0000001117.mp4\"},{\"id\":\"807\",\"detail\":\"行业的本质，香港（卖房）、台湾（服务）、日本（信息）、美国（人）、IBM（交换机）\",\"name\":\"我眼中的行家-经营层面\",\"path\":\"http://admin.ljabc.com.cn/upload/video/file_0000001118.mp4\"},{\"id\":\"808\",\"detail\":\"尊重职业＋脚踏实地＋终身学习＋独立思考\",\"name\":\"如何成为行家\",\"path\":\"http://admin.ljabc.com.cn/upload/video/file_0000001119.mp4\"}]}";
+                //列表的详细信息
+                var jsonString = "{\"lineContent\":{\"typeName\":\"1\",\"id\":\"783\",\"detail\":\"踏入这一行\",\"countdown\":\"2015-12-14 00:00:00\",\"adaptObject\":\"链家专属\",\"yhPrice\":\"88\",\"videoUrl\":\"http://admin.ljabc.com.cn/upload/video/PIC_0000000549.png\",\"videoPath\":\"http://admin.ljabc.com.cn/upload/video/file_0000001110.mp4\",\"sjPrice\":\"88\",\"effectiveTime\":\"6个月\",\"videoName\":\"行家\",\"teacher\":\"祁世钊\"},\"dailyLesson\":\"0\",\"chapterList\":[{\"id\":\"799\",\"detail\":\"开篇\",\"name\":\"开篇\",\"path\":\"http://admin.ljabc.com.cn/upload/video/file_0000001110.mp4\"},{\"id\":\"800\",\"detail\":\"行\",\"name\":\"行\",\"path\":\"http://192.168.0.3:8080/mcs/html/b.mp4\"},{\"id\":\"801\",\"detail\":\"客户思维，我对客户好1分，客户对我好10分\",\"name\":\"行-我能干好（一）\",\"path\":\"http://admin.ljabc.com.cn/upload/video/file_0000002342.mp4\"},{\"id\":\"802\",\"detail\":\"销售最重要的是具有百折不挠的精神，你没有拜访8次，你不要回来跟我说，你要放弃了。\",\"name\":\"行-我能干好（二）\",\"path\":\"http://admin.ljabc.com.cn/upload/video/file_0000001113.mp4\"},{\"id\":\"803\",\"detail\":\"任何一个行业，如果你选对了，那就要沉下去，你觉得选的不对要赶紧换。\",\"name\":\"行-我能干长\",\"path\":\"http://admin.ljabc.com.cn/upload/video/file_0000001114.mp4\"},{\"id\":\"804\",\"detail\":\"选行非常重要，选一个毛利率高、市场空间大、人才洼地的行业。\",\"name\":\"行-选择背后的力量\",\"path\":\"http://admin.ljabc.com.cn/upload/video/file_0000001115.mp4\"},{\"id\":\"805\",\"detail\":\"我们跟优秀的房产销售顾问相比，还有很长一段路要走。\",\"name\":\"我眼中的行家-业务层面\",\"path\":\"http://192.168.0.3:8080/mcs/html/bigvideo.mp4\"},{\"id\":\"806\",\"detail\":\"链家对这个行业的摸索，如同猪在拱一扇门，怎么都拱不开，拱了很久，突然有一天门打开了。\",\"name\":\"我眼中的行家-管理层面\",\"path\":\"http://admin.ljabc.com.cn/upload/video/file_0000001117.mp4\"},{\"id\":\"807\",\"detail\":\"行业的本质，香港（卖房）、台湾（服务）、日本（信息）、美国（人）、IBM（交换机）\",\"name\":\"我眼中的行家-经营层面\",\"path\":\"http://admin.ljabc.com.cn/upload/video/file_0000001118.mp4\"},{\"id\":\"808\",\"detail\":\"尊重职业＋脚踏实地＋终身学习＋独立思考\",\"name\":\"如何成为行家\",\"path\":\"http://192.168.0.3:8080/mcs/html/a.mp4\"}]}";
 
-                plus.plugintest.PluginTestFunction(jsonString,1,"AsyncFunction","MultiArgument!", function( result ) {
+                plus.plugintest.PluginTestFunction(jsonString,"800","mengfanzhen","MultiArgument!", function( result ) {
 });
             }
-        
+        //打开下载管理界面
         function pluginShowArrayArgu() {
             
-             var jsonString = "{\"lineContent\":{\"typeName\":\"1\",\"id\":\"783\",\"detail\":\"踏入这一行\",\"countdown\":\"2015-12-14 00:00:00\",\"adaptObject\":\"链家专属\",\"yhPrice\":\"88\",\"videoUrl\":\"http://admin.ljabc.com.cn/upload/video/PIC_0000000549.png\",\"videoPath\":\"http://admin.ljabc.com.cn/upload/video/file_0000001110.mp4\",\"sjPrice\":\"88\",\"effectiveTime\":\"6个月\",\"videoName\":\"行家\",\"teacher\":\"祁世钊\"},\"dailyLesson\":\"0\",\"chapterList\":[{\"id\":\"799\",\"detail\":\"开篇\",\"name\":\"开篇\",\"path\":\"http://admin.ljabc.com.cn/upload/video/file_0000001110.mp4\"},{\"id\":\"800\",\"detail\":\"行\",\"name\":\"行\",\"path\":\"http://admin.ljabc.com.cn/upload/video/file_0000001111.mp4\"},{\"id\":\"801\",\"detail\":\"客户思维，我对客户好1分，客户对我好10分\",\"name\":\"行-我能干好（一）\",\"path\":\"http://admin.ljabc.com.cn/upload/video/file_0000002342.mp4\"},{\"id\":\"802\",\"detail\":\"销售最重要的是具有百折不挠的精神，你没有拜访8次，你不要回来跟我说，你要放弃了。\",\"name\":\"行-我能干好（二）\",\"path\":\"http://admin.ljabc.com.cn/upload/video/file_0000001113.mp4\"},{\"id\":\"803\",\"detail\":\"任何一个行业，如果你选对了，那就要沉下去，你觉得选的不对要赶紧换。\",\"name\":\"行-我能干长\",\"path\":\"http://admin.ljabc.com.cn/upload/video/file_0000001114.mp4\"},{\"id\":\"804\",\"detail\":\"选行非常重要，选一个毛利率高、市场空间大、人才洼地的行业。\",\"name\":\"行-选择背后的力量\",\"path\":\"http://admin.ljabc.com.cn/upload/video/file_0000001115.mp4\"},{\"id\":\"805\",\"detail\":\"我们跟优秀的房产销售顾问相比，还有很长一段路要走。\",\"name\":\"我眼中的行家-业务层面\",\"path\":\"http://admin.ljabc.com.cn/upload/video/file_0000001116.mp4\"},{\"id\":\"806\",\"detail\":\"链家对这个行业的摸索，如同猪在拱一扇门，怎么都拱不开，拱了很久，突然有一天门打开了。\",\"name\":\"我眼中的行家-管理层面\",\"path\":\"http://admin.ljabc.com.cn/upload/video/file_0000001117.mp4\"},{\"id\":\"807\",\"detail\":\"行业的本质，香港（卖房）、台湾（服务）、日本（信息）、美国（人）、IBM（交换机）\",\"name\":\"我眼中的行家-经营层面\",\"path\":\"http://admin.ljabc.com.cn/upload/video/file_0000001118.mp4\"},{\"id\":\"808\",\"detail\":\"尊重职业＋脚踏实地＋终身学习＋独立思考\",\"name\":\"如何成为行家\",\"path\":\"http://admin.ljabc.com.cn/upload/video/file_0000001119.mp4\"}]}";
-            plus.plugintest.PluginTestFunctionArrayArgu( [jsonString,"Plus","AsyncFunction","ArrayArgument!"], function( result ) {alert( result );},function(result){alert(result)});
+          
+            plus.plugintest.PluginTestFunctionArrayArgu( [ "mengfanzhen","Plus","AsyncFunction","ArrayArgument!"], function( result ) {alert( result );},function(result){alert(result)});
+        }
+        
+        //增加下载队列
+        function pluginShowArrayArgu1() {
+            
+            //列表的详细信息
+            var jsonString = "{\"lineContent\":{\"typeName\":\"1\",\"id\":\"783\",\"detail\":\"踏入这一行\",\"countdown\":\"2015-12-14 00:00:00\",\"adaptObject\":\"链家专属\",\"yhPrice\":\"88\",\"videoUrl\":\"http://admin.ljabc.com.cn/upload/video/PIC_0000000549.png\",\"videoPath\":\"http://admin.ljabc.com.cn/upload/video/file_0000001110.mp4\",\"sjPrice\":\"88\",\"effectiveTime\":\"6个月\",\"videoName\":\"行家\",\"teacher\":\"祁世钊\"},\"dailyLesson\":\"0\",\"chapterList\":[{\"id\":\"799\",\"detail\":\"开篇\",\"name\":\"开篇\",\"path\":\"http://admin.ljabc.com.cn/upload/video/file_0000001110.mp4\"},{\"id\":\"800\",\"detail\":\"行\",\"name\":\"行\",\"path\":\"http://192.168.0.3:8080/mcs/html/c.mp4\"},{\"id\":\"801\",\"detail\":\"客户思维，我对客户好1分，客户对我好10分\",\"name\":\"行-我能干好（一）\",\"path\":\"http://admin.ljabc.com.cn/upload/video/file_0000002342.mp4\"},{\"id\":\"802\",\"detail\":\"销售最重要的是具有百折不挠的精神，你没有拜访8次，你不要回来跟我说，你要放弃了。\",\"name\":\"行-我能干好（二）\",\"path\":\"http://admin.ljabc.com.cn/upload/video/file_0000001113.mp4\"},{\"id\":\"803\",\"detail\":\"任何一个行业，如果你选对了，那就要沉下去，你觉得选的不对要赶紧换。\",\"name\":\"行-我能干长\",\"path\":\"http://admin.ljabc.com.cn/upload/video/file_0000001114.mp4\"},{\"id\":\"804\",\"detail\":\"选行非常重要，选一个毛利率高、市场空间大、人才洼地的行业。\",\"name\":\"行-选择背后的力量\",\"path\":\"http://admin.ljabc.com.cn/upload/video/file_0000001115.mp4\"},{\"id\":\"805\",\"detail\":\"我们跟优秀的房产销售顾问相比，还有很长一段路要走。\",\"name\":\"我眼中的行家-业务层面\",\"path\":\"http://192.168.0.3:8080/mcs/html/bigvideo.mp4\"},{\"id\":\"806\",\"detail\":\"链家对这个行业的摸索，如同猪在拱一扇门，怎么都拱不开，拱了很久，突然有一天门打开了。\",\"name\":\"我眼中的行家-管理层面\",\"path\":\"http://192.168.0.3:8080/mcs/html/b.mp4\"},{\"id\":\"807\",\"detail\":\"行业的本质，香港（卖房）、台湾（服务）、日本（信息）、美国（人）、IBM（交换机）\",\"name\":\"我眼中的行家-经营层面\",\"path\":\"http://admin.ljabc.com.cn/upload/video/file_0000001118.mp4\"},{\"id\":\"808\",\"detail\":\"尊重职业＋脚踏实地＋终身学习＋独立思考\",\"name\":\"如何成为行家\",\"path\":\"http://192.168.0.3:8080/mcs/html/a.mp4\"}]}";
+            
+            //需要下载的id
+            var jsonString1 ="{\"downloadid\":\"800,805,806\",\"effectiveTime\":{\"800\":\"2016-10-07\",\"805\":\"2017-03-15\",\"806\":\"2017-03-15\"}}";
+            plus.plugintest.PluginTestFunctionArrayArgu1( [jsonString,jsonString1,"mengfanzhen","ArrayArgument!"], function( result ) {alert( result );},function(result){alert(result)});
         }
         
         function pluginGetString()
         {
-            alert(plus.plugintest.PluginTestFunctionSync("Html5","Plus","SyncFunction","MultiArgument!"));
+            
+            //列表的详细信息
+            var jsonString = "{\"lineContent\":{\"typeName\":\"1\",\"id\":\"783\",\"detail\":\"踏入这一行\",\"countdown\":\"2015-12-14 00:00:00\",\"adaptObject\":\"链家专属\",\"yhPrice\":\"88\",\"videoUrl\":\"http://admin.ljabc.com.cn/upload/video/PIC_0000000549.png\",\"videoPath\":\"http://admin.ljabc.com.cn/upload/video/file_0000001110.mp4\",\"sjPrice\":\"88\",\"effectiveTime\":\"6个月\",\"videoName\":\"行家\",\"teacher\":\"祁世钊\"},\"dailyLesson\":\"0\",\"chapterList\":[{\"id\":\"799\",\"detail\":\"开篇\",\"name\":\"开篇\",\"path\":\"http://admin.ljabc.com.cn/upload/video/file_0000001110.mp4\"},{\"id\":\"800\",\"detail\":\"行\",\"name\":\"行\",\"path\":\"http://admin.ljabc.com.cn/upload/video/file_0000001111.mp4\"},{\"id\":\"801\",\"detail\":\"客户思维，我对客户好1分，客户对我好10分\",\"name\":\"行-我能干好（一）\",\"path\":\"http://admin.ljabc.com.cn/upload/video/file_0000002342.mp4\"},{\"id\":\"802\",\"detail\":\"销售最重要的是具有百折不挠的精神，你没有拜访8次，你不要回来跟我说，你要放弃了。\",\"name\":\"行-我能干好（二）\",\"path\":\"http://admin.ljabc.com.cn/upload/video/file_0000001113.mp4\"},{\"id\":\"803\",\"detail\":\"任何一个行业，如果你选对了，那就要沉下去，你觉得选的不对要赶紧换。\",\"name\":\"行-我能干长\",\"path\":\"http://admin.ljabc.com.cn/upload/video/file_0000001114.mp4\"},{\"id\":\"804\",\"detail\":\"选行非常重要，选一个毛利率高、市场空间大、人才洼地的行业。\",\"name\":\"行-选择背后的力量\",\"path\":\"http://admin.ljabc.com.cn/upload/video/file_0000001115.mp4\"},{\"id\":\"805\",\"detail\":\"我们跟优秀的房产销售顾问相比，还有很长一段路要走。\",\"name\":\"我眼中的行家-业务层面\",\"path\":\"http://admin.ljabc.com.cn/upload/video/file_0000001116.mp4\"},{\"id\":\"806\",\"detail\":\"链家对这个行业的摸索，如同猪在拱一扇门，怎么都拱不开，拱了很久，突然有一天门打开了。\",\"name\":\"我眼中的行家-管理层面\",\"path\":\"http://admin.ljabc.com.cn/upload/video/file_0000001117.mp4\"},{\"id\":\"807\",\"detail\":\"行业的本质，香港（卖房）、台湾（服务）、日本（信息）、美国（人）、IBM（交换机）\",\"name\":\"我眼中的行家-经营层面\",\"path\":\"http://admin.ljabc.com.cn/upload/video/file_0000001118.mp4\"},{\"id\":\"808\",\"detail\":\"尊重职业＋脚踏实地＋终身学习＋独立思考\",\"name\":\"如何成为行家\",\"path\":\"http://admin.ljabc.com.cn/upload/video/file_0000001119.mp4\"}]}";
+            
+            //需要下载的id
+            var jsonString1 = "805,808";
+            plus.plugintest.PluginTestFunctionArrayArgu1( [jsonString,jsonString1,"wanghailu","ArrayArgument!"], function( result ) {alert( result );},function(result){alert(result)});
         }
         
         function pluginGetStringArrayArgu()
         {
-            var Argus = plus.plugintest.PluginTestFunctionSyncArrayArgu(["Html5","Plus","SyncFunction","ArrayArgument!"]);
-            alert( Argus.RetArgu1 + "_" +  Argus.RetArgu2 + "_" + Argus.RetArgu3  + "_" + Argus.RetArgu4 );
+            plus.plugintest.PluginTestFunctionArrayArgu( [ "wanghailu ","Plus","AsyncFunction","ArrayArgument!"], function( result ) {alert( result );},function(result){alert(result)});
+
         }
+        
+        function pluginGetStringArrayArgu1(){
+            alert(plus.plugintest.PluginTestFunctionSync("mengfanzhen","783","SyncFunction","MultiArgument!"));        }
+        
+        
+        function pluginGetStringArrayArgu2(){
+            plus.plugintest.PluginTestFunction("debugflag","800","mengfanzhen","playrecord", function( result ) {alert( result[0]  + "_" + result[1]  + "_" + result[2]  + "_" + result[3] );},function(result){alert(result)});
+        };
+        
+        function pluginGetStringArrayArgu3(){
+            
+            plus.plugintest.PluginTestFunction("debugflag","800","mengfanzhen","delete", function( result ) {alert( result[0]  + "_" + result[1]  + "_" + result[2]  + "_" + result[3] );},function(result){alert(result)});
+        };
         
             </script>
 		<link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8"/>
@@ -198,10 +229,17 @@ li:active {
 		</header>
 		<div id="content" class="content">
             <br/>
-            <div class="button" onclick="pluginShow()">PluginTestFunction()</div>
-            <div class="button" onclick="pluginShowArrayArgu()">PluginTestFunctionArrayArgu()</div>
-            <div class="button" onclick="pluginGetString()">PluginTestFunctionSync()</div>
-            <div class="button" onclick="pluginGetStringArrayArgu()">PluginTestFunctionSyncArrayArgu()</div>
+            <div class="button" onclick="pluginShow()">打开播放器</div>
+            <div class="button" onclick="pluginShowArrayArgu()">打开下载管理界面</div>
+            <div class="button" onclick="pluginShowArrayArgu1()">启动1个下载任务</div>
+            <div class="button" onclick="pluginGetString()">测试切换用户启动下载任务</div>
+
+            <div class="button" onclick="pluginGetStringArrayArgu()">测试切换用户</div>
+            <div class="button" onclick="pluginGetStringArrayArgu1()">测试获取课程列表</div>
+            <div class="button" onclick="pluginGetStringArrayArgu2()">打开播放记录界面</div>
+            <div class="button" onclick="pluginGetStringArrayArgu3()">删除已下载视频</div>
+
+
             <br/>
 		</div>
 	</body>
